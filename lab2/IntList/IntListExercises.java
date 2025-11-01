@@ -9,13 +9,10 @@ public class IntListExercises {
      * @param lst IntList from Lecture
      */
     public static void addConstant(IntList lst, int c) {
-        IntList head = lst;
-        while (true) {
-            head.first += c;
-            if(head.rest == null){
-                break;
-            }
-            head = head.rest;
+        IntList current = lst;  // 使用临时变量遍历
+        while (current != null) {
+            current.first += c;
+            current = current.rest;
         }
     }
 
