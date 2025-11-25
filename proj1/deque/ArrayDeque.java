@@ -14,9 +14,16 @@ public class ArrayDeque<T> implements Deque<T>{
     }
 
     public void resize(int Dequesize){
-        Deque = (T[]) new Object[Dequesize];
-        nextFirst = Dequesize/2 - 1;
-        nextLast = Dequesize/2;
+        T[] newDeque = (T[]) new Object[Dequesize];
+
+        for (int i = 0; i < size; i++) {
+            int oldIndex = ((nextFirst + 1) % Deque.length + i) % Deque.length;
+            newDeque[i] = Deque[oldIndex];
+        }
+
+        Deque = newDeque;
+        nextFirst = Dequesize - 1;
+        nextLast = size;
     }
 
     @Override
