@@ -15,7 +15,7 @@ public class ArrayDeque<T> implements Deque<T>, Iterable<T>{
         nextLast = 4;
     }
 
-    public void resize(int Dequesize){
+    private void resize(int Dequesize){
         T[] newDeque = (T[]) new Object[Dequesize];
 
         for (int i = 0; i < size; i++) {
